@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EtsyTestApp</string>
+    <string name="fragment_search_submit">Submit</string>
+    <string name="fragment_search_categories_hint">Categories</string>
+</resources>
