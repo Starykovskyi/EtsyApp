@@ -13,7 +13,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.starikovskii.etsytestapp.EtsyApplication;
 import com.starikovskii.etsytestapp.R;
 import com.starikovskii.etsytestapp.model.ProductModel;
-import com.starikovskii.etsytestapp.screens.search.ISearchFragmentPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +69,8 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
         ImageView ivProductImage;
         @BindView(R.id.tvProductName)
         TextView tvProductName;
+        @BindView(R.id.ivSave)
+        TextView ivSave;
 
         public ProductViewHolder(View itemView, final ProductItemClickListener listener) {
             super(itemView);
@@ -89,17 +90,25 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
                     .fitCenter()
                     .diskCacheStrategy( DiskCacheStrategy.RESULT )
                     .into(ivProductImage);
-            root.setOnClickListener(new View.OnClickListener() {
+            ivProductImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    listener.onClick(product);
+                    listener.toDetailsFragment(product);
+                }
+            });
+
+            ivSave.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.saveProduct(product);
                 }
             });
         }
     }
 
     public interface ProductItemClickListener {
-        void onClick(ProductModel product);
+        void toDetailsFragment(ProductModel product);
+        void saveProduct(ProductModel product);
     }
 
 }

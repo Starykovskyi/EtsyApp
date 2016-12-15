@@ -15,7 +15,7 @@ import com.starikovskii.etsytestapp.R;
 import com.starikovskii.etsytestapp.injection.component.IEtsyPresentersComponent;
 import com.starikovskii.etsytestapp.model.PaginationModel;
 import com.starikovskii.etsytestapp.model.ProductModel;
-import com.starikovskii.etsytestapp.model.ProductResponseModel;
+import com.starikovskii.etsytestapp.network.response.ProductResponseModel;
 import com.starikovskii.etsytestapp.view.adapters.ProductRecyclerViewAdapter;
 import com.starikovskii.etsytestapp.view.base.BaseFragment;
 
@@ -78,8 +78,13 @@ public class ProductGridFragment extends BaseFragment implements IProductGridFra
     private void initRecyclerView() {
         recyclerViewAdapter = new ProductRecyclerViewAdapter(new ProductRecyclerViewAdapter.ProductItemClickListener() {
             @Override
-            public void onClick(ProductModel product) {
-                presenter.onItemClick(product);
+            public void toDetailsFragment(ProductModel product) {
+                presenter.onProductClick(product);
+            }
+
+            @Override
+            public void saveProduct(ProductModel product) {
+                presenter.saveProduct(product);
             }
         });
         final GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);

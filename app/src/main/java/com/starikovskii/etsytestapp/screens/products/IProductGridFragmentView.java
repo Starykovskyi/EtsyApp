@@ -1,11 +1,7 @@
 package com.starikovskii.etsytestapp.screens.products;
 
-import com.starikovskii.etsytestapp.model.CategoriesModel;
-import com.starikovskii.etsytestapp.model.PaginationModel;
 import com.starikovskii.etsytestapp.model.ProductModel;
-import com.starikovskii.etsytestapp.model.ProductResponseModel;
-
-import java.util.List;
+import com.starikovskii.etsytestapp.network.response.ProductResponseModel;
 
 /**
  * Created by FkingAlive on 12.12.2016.

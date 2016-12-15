@@ -3,12 +3,10 @@ package com.starikovskii.etsytestapp.screens.products;
 import android.util.Log;
 
 import com.starikovskii.etsytestapp.EtsyApplication;
-import com.starikovskii.etsytestapp.model.CategoriesResponseModel;
 import com.starikovskii.etsytestapp.model.ProductModel;
-import com.starikovskii.etsytestapp.model.ProductResponseModel;
+import com.starikovskii.etsytestapp.model.dao.IProductDAO;
+import com.starikovskii.etsytestapp.network.response.ProductResponseModel;
 import com.starikovskii.etsytestapp.network.IProductAPI;
-import com.starikovskii.etsytestapp.screens.search.ISearchFragmentView;
-import com.starikovskii.etsytestapp.screens.search.SearchFragmentPresenterImpl;
 import com.starikovskii.etsytestapp.utils.Constants;
 
 import javax.inject.Inject;
@@ -29,6 +27,9 @@ public class ProductGridFragmentPresenterImpl implements IProductGridFragmentPre
 
     @Inject
     IProductAPI api;
+
+    @Inject
+    IProductDAO productDAO;
 
     @Inject
     public ProductGridFragmentPresenterImpl (){
@@ -76,7 +77,12 @@ public class ProductGridFragmentPresenterImpl implements IProductGridFragmentPre
     }
 
     @Override
-    public void onItemClick(ProductModel product) {
+    public void onProductClick(ProductModel product) {
         view.replaceToDetailFragment(product);
+    }
+
+    @Override
+    public void saveProduct(final ProductModel product) {
+        productDAO.saveProduct(product);
     }
 }

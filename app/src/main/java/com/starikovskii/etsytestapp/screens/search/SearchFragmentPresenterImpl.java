@@ -4,9 +4,8 @@ import android.util.Log;
 
 import com.starikovskii.etsytestapp.EtsyApplication;
 import com.starikovskii.etsytestapp.model.CategoriesModel;
-import com.starikovskii.etsytestapp.model.CategoriesResponseModel;
+import com.starikovskii.etsytestapp.network.response.CategoriesResponseModel;
 import com.starikovskii.etsytestapp.network.ICategoryAPI;
-import com.starikovskii.etsytestapp.network.IProductAPI;
 import com.starikovskii.etsytestapp.utils.Constants;
 
 import javax.inject.Inject;

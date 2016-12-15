@@ -2,7 +2,6 @@
 package com.starikovskii.etsytestapp.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
@@ -11,7 +10,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 @Table(name = "Product")
-public class ProductModel extends Model implements Serializable {
+public class ProductModel extends Model implements Serializable{
 
     @Column(name = "title")
     @SerializedName("title")

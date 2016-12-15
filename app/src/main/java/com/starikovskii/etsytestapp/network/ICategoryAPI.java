@@ -1,6 +1,6 @@
 package com.starikovskii.etsytestapp.network;
 
-import com.starikovskii.etsytestapp.model.CategoriesResponseModel;
+import com.starikovskii.etsytestapp.network.response.CategoriesResponseModel;
 import com.starikovskii.etsytestapp.utils.Constants;
 
 import retrofit2.http.GET;

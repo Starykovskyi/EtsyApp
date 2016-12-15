@@ -6,5 +6,6 @@ import com.starikovskii.etsytestapp.utils.IBaseFragmentPresenter;
 public interface IProductGridFragmentPresenter extends IBaseFragmentPresenter<IProductGridFragmentView> {
     void loadProducts(String categoryName, String keyword);
     void loadMoreProducts(String categoryName, String keyword, int offset);
-    void onItemClick(ProductModel product);
+    void onProductClick(ProductModel product);
+    void saveProduct(ProductModel product);
 }

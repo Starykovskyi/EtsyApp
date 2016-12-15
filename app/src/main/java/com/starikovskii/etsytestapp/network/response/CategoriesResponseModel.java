@@ -1,9 +1,10 @@
-package com.starikovskii.etsytestapp.model;
+package com.starikovskii.etsytestapp.network.response;
 
 import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.starikovskii.etsytestapp.model.CategoriesModel;
 
 
 public class CategoriesResponseModel implements Serializable

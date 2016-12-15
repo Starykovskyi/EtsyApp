@@ -1,11 +1,13 @@
 
-package com.starikovskii.etsytestapp.model;
+package com.starikovskii.etsytestapp.network.response;
 
 import java.io.Serializable;
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.starikovskii.etsytestapp.model.PaginationModel;
+import com.starikovskii.etsytestapp.model.ProductModel;
 
 public class ProductResponseModel implements Serializable {
 
