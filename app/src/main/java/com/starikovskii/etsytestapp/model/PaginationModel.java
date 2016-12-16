@@ -24,6 +24,9 @@ public class PaginationModel implements Serializable {
     private Integer nextPage;
     private final static long serialVersionUID = -3080266657556039835L;
 
+    public PaginationModel() {
+    }
+
     /**
      * @return The effectiveLimit
      */

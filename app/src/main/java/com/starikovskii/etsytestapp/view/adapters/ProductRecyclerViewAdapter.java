@@ -70,7 +70,7 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
         @BindView(R.id.tvProductName)
         TextView tvProductName;
         @BindView(R.id.ivSave)
-        TextView ivSave;
+        ImageView ivSave;
 
         public ProductViewHolder(View itemView, final ProductItemClickListener listener) {
             super(itemView);

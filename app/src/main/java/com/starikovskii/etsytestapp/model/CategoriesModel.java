@@ -24,6 +24,9 @@ public class CategoriesModel implements Serializable {
     private String longName;
     private final static long serialVersionUID = -7361811298419741380L;
 
+    public CategoriesModel() {
+    }
+
     /**
      * @return The categoryId
      */

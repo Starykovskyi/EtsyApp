@@ -9,7 +9,7 @@ import com.activeandroid.annotation.Table;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@Table(name = "Product")
+@Table(name = "Products")
 public class ProductModel extends Model implements Serializable{
 
     @Column(name = "title")
@@ -43,6 +43,9 @@ public class ProductModel extends Model implements Serializable{
     private ProductImageModel mainImage;
 
     private final static long serialVersionUID = 394002314050108551L;
+
+    public ProductModel() {
+    }
 
     /**
      * @return The title

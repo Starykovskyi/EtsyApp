@@ -33,6 +33,10 @@ public class ProductImageModel implements Serializable
     @SerializedName("url_fullxfull")
     @Expose
     private String urlFullxfull;
+
+    public ProductImageModel() {
+    }
+
     private final static long serialVersionUID = -5542754780403665421L;
 
     /**

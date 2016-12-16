@@ -1,5 +1,6 @@
 package com.starikovskii.etsytestapp.screens.products;
 
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,7 @@ import butterknife.ButterKnife;
 public class ProductGridFragment extends BaseFragment implements IProductGridFragmentView {
     private static final String CATEGORY_NAME = "category_name";
     private static final String KEYWORD = "keyword";
+    private static final String TAG = ProductGridFragment.class.getSimpleName();
 
     @Inject
     IProductGridFragmentPresenter presenter;
@@ -133,11 +136,11 @@ public class ProductGridFragment extends BaseFragment implements IProductGridFra
 
     @Override
     public void showProgressIndicator() {
-
+        Log.d(TAG,"show");
     }
 
     @Override
     public void hideProgressIndicator() {
-
+        Log.d(TAG,"hide");
     }
 }
