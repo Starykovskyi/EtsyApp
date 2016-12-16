@@ -12,5 +12,4 @@ public interface IProductGridFragmentView {
     void replaceToDetailFragment(ProductModel product);
     void showProgressIndicator();
     void hideProgressIndicator();
-    void onEmptyResult();
 }

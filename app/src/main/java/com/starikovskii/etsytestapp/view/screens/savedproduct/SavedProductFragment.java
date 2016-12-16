@@ -148,16 +148,6 @@ public class SavedProductFragment extends BaseFragment implements ISavedProductF
     public void onDeleteProduct(int position) {
         recyclerViewAdapter.deleteProduct(position);
     }
-    @Override
-    public void onEmptyResult() {
-        new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                .setTitleText(getString(R.string.saved_product_fragment_empty_error))
-                .setConfirmText(getString(R.string.saved_product_fragment_confirm))
-                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                    @Override
-                    public void onClick(SweetAlertDialog sDialog) {
-                        sDialog.dismissWithAnimation();
-                    }
-                }). show();
-    }
+
+
 }

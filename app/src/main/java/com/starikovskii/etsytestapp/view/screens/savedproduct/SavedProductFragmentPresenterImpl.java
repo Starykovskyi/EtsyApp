@@ -50,11 +50,7 @@ public class SavedProductFragmentPresenterImpl implements ISavedProductFragmentP
                     @Override
                     public void onNext(List<ProductModel> response) {
                         view.hideProgressIndicator();
-                        if(response.size()!=0){
-                            view.onLoadNewProducts(response);
-                        } else {
-                            view.onEmptyResult();
-                        }
+                        view.onLoadNewProducts(response);
                     }
                 });
     }

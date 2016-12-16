@@ -63,11 +63,7 @@ public class ProductGridFragmentPresenterImpl implements IProductGridFragmentPre
                     public void onNext(ProductResponseModel response) {
                         Log.d(TAG,"onNext");
                         view.hideProgressIndicator();
-                        if(response.getResults().size() == 0){
-                            view.onEmptyResult();
-                        } else {
-                            view.onLoadNewProducts(response);
-                        }
+                        view.onLoadNewProducts(response);
                     }
                 });
     }
