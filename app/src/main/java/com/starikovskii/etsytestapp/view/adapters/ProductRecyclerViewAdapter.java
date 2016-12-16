@@ -13,6 +13,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.starikovskii.etsytestapp.EtsyApplication;
 import com.starikovskii.etsytestapp.R;
 import com.starikovskii.etsytestapp.model.ProductModel;
+import com.starikovskii.etsytestapp.utils.listeners.ProductItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +49,10 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
     public void onBindViewHolder(ProductViewHolder holder, int position) {
         holder.bindView(products.get(position));
     }
-
+    public void clear() {
+        this.products.clear();
+        notifyDataSetChanged();
+    }
     @Override
     public int getItemCount() {
         return products.size();
@@ -59,6 +63,7 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
         this.products.addAll(products);
         notifyItemRangeInserted(oldSize, products.size());
     }
+
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
         @Inject
         Context context;
@@ -69,13 +74,11 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
         ImageView ivProductImage;
         @BindView(R.id.tvProductName)
         TextView tvProductName;
-        @BindView(R.id.ivSave)
-        ImageView ivSave;
 
         public ProductViewHolder(View itemView, final ProductItemClickListener listener) {
             super(itemView);
             ButterKnife.bind(this,itemView);
-            EtsyApplication.getAppComponent().inject(this);
+            EtsyApplication.getMainComponent().inject(this);
             this.root = itemView;
             this.listener = listener;
         }
@@ -90,25 +93,15 @@ public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecy
                     .fitCenter()
                     .diskCacheStrategy( DiskCacheStrategy.RESULT )
                     .into(ivProductImage);
-            ivProductImage.setOnClickListener(new View.OnClickListener() {
+            root.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     listener.toDetailsFragment(product);
                 }
             });
 
-            ivSave.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    listener.saveProduct(product);
-                }
-            });
         }
     }
 
-    public interface ProductItemClickListener {
-        void toDetailsFragment(ProductModel product);
-        void saveProduct(ProductModel product);
-    }
 
 }

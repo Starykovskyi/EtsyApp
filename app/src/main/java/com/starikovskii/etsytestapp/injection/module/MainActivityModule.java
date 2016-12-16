@@ -1,18 +1,18 @@
 package com.starikovskii.etsytestapp.injection.module;
 
-import com.starikovskii.etsytestapp.screens.IMainActivityPresenter;
-import com.starikovskii.etsytestapp.screens.main.IMainFragmentPresenter;
-import com.starikovskii.etsytestapp.screens.details.IProductDetailFragmentPresenter;
-import com.starikovskii.etsytestapp.screens.products.IProductGridFragmentPresenter;
-import com.starikovskii.etsytestapp.screens.savedproduct.ISavedProductFragmentPresenter;
-import com.starikovskii.etsytestapp.screens.search.ISearchFragmentPresenter;
-import com.starikovskii.etsytestapp.screens.MainActivityPresenterImpl;
-import com.starikovskii.etsytestapp.screens.main.MainFragmentPresenterImpl;
-import com.starikovskii.etsytestapp.screens.details.ProductDetailFragmentPresenterImpl;
-import com.starikovskii.etsytestapp.screens.products.ProductGridFragmentPresenterImpl;
-import com.starikovskii.etsytestapp.screens.savedproduct.SavedProductFragmentPresenterImpl;
-import com.starikovskii.etsytestapp.screens.search.SearchFragmentPresenterImpl;
-import com.starikovskii.etsytestapp.screens.IMainActivityView;
+import com.starikovskii.etsytestapp.view.screens.IMainActivityPresenter;
+import com.starikovskii.etsytestapp.view.screens.main.IMainFragmentPresenter;
+import com.starikovskii.etsytestapp.view.screens.details.IProductDetailFragmentPresenter;
+import com.starikovskii.etsytestapp.view.screens.products.IProductGridFragmentPresenter;
+import com.starikovskii.etsytestapp.view.screens.savedproduct.ISavedProductFragmentPresenter;
+import com.starikovskii.etsytestapp.view.screens.search.ISearchFragmentPresenter;
+import com.starikovskii.etsytestapp.view.screens.MainActivityPresenterImpl;
+import com.starikovskii.etsytestapp.view.screens.main.MainFragmentPresenterImpl;
+import com.starikovskii.etsytestapp.view.screens.details.ProductDetailFragmentPresenterImpl;
+import com.starikovskii.etsytestapp.view.screens.products.ProductGridFragmentPresenterImpl;
+import com.starikovskii.etsytestapp.view.screens.savedproduct.SavedProductFragmentPresenterImpl;
+import com.starikovskii.etsytestapp.view.screens.search.SearchFragmentPresenterImpl;
+import com.starikovskii.etsytestapp.view.screens.IMainActivityView;
 
 import dagger.Module;
 import dagger.Provides;

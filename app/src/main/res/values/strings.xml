@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">EtsyTestApp</string>
     <string name="fragment_search_submit">Submit</string>
-    <string name="fragment_search_categories_hint">Categories</string>
+    <string name="fragment_search_categories_hint">select category</string>
+    <string name="details_fragment_description">Description:</string>
+    <string name="price">Price:</string>
+    <string name="details_fragment_product_added">Product added</string>
+    <string name="details_fragment_confirm">Ok</string>
+    <string name="details_fragment_error_adding">Cant add product</string>
+    <string name="search_keyword">Search keyword</string>
+    <string name="main_fragment_search">Search</string>
+    <string name="main_fragment_saved">Saved products</string>
+    <string name="search_fragment_no_cathegory_selected">No category selected</string>
+    <string name="saved_product_fragment_empty_error">Have no products, sorry</string>
+    <string name="saved_product_fragment_confirm">Ok</string>
+    <string name="product_fragment_empty_error">Have no products, sorry</string>
+    <string name="product_fragment_confirm">Ok</string>
 </resources>

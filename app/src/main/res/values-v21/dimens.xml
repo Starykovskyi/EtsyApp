@@ -4,4 +4,5 @@
     <dimen name="card_view_corner_radius">6dp</dimen>
     <dimen name="card_view_width">150dp</dimen>
     <dimen name="card_view_height">200dp</dimen>
+    <dimen name="fragment_detail_image_height">250dp</dimen>
 </resources>

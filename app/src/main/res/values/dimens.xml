@@ -10,4 +10,10 @@
     <dimen name="card_view_corner_radius">6dp</dimen>
     <dimen name="card_view_width">150dp</dimen>
     <dimen name="card_view_height">250dp</dimen>
+    <dimen name="fragment_detail_image_height">250dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_middle">20dp</dimen>
+    <dimen name="margin_xsmall">5dp</dimen>
+    <dimen name="dilivers_height">1.5dp</dimen>
+    <dimen name="fragment_details_save_button_size">50dp</dimen>
 </resources>

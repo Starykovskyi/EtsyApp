@@ -15,7 +15,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setupComponent(EtsyApplication.get(this).getAppComponent());
+        setupComponent(EtsyApplication.get(this).getMainComponent());
     }
 
     protected abstract void setupComponent(IEtsyMainComponent appComponent);

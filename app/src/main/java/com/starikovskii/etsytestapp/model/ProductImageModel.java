@@ -1,13 +1,14 @@
 package com.starikovskii.etsytestapp.model;
 import java.io.Serializable;
 
+import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 @Table(name = "Image")
-public class ProductImageModel implements Serializable
+public class ProductImageModel extends Model implements Serializable
 {
     @Column(name = "listing_image_id")
     @SerializedName("listing_image_id")

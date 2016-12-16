@@ -17,6 +17,13 @@ public class ProductModel extends Model implements Serializable{
     @Expose
     private String title;
 
+
+
+    @Column(name = "listing_id", unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
+    @SerializedName("listing_id")
+    @Expose
+    private String listingId;
+
     @Column(name = "description")
     @SerializedName("description")
     @Expose
@@ -37,7 +44,7 @@ public class ProductModel extends Model implements Serializable{
     @Expose
     private Integer quantity;
 
-    @Column(name = "mainImage")
+    @Column(name = "main_image", onDelete = Column.ForeignKeyAction.CASCADE)
     @SerializedName("MainImage")
     @Expose
     private ProductImageModel mainImage;
@@ -132,5 +139,11 @@ public class ProductModel extends Model implements Serializable{
     }
 
 
+    public String getListingId() {
+        return listingId;
+    }
 
+    public void setListingId(String listingId) {
+        this.listingId = listingId;
+    }
 }

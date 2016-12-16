@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:titleTextColor="@color/textColorPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        tools:title="testApp" />
+
+    <ImageView
+        android:id="@+id/ivProductImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_detail_image_height"
+        android:layout_below="@+id/toolbar" />
+
+    <View
+        android:id="@+id/deliver1"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dilivers_height"
+        android:layout_below="@+id/ivProductImage"
+        android:layout_margin="@dimen/margin_xsmall"
+        android:background="@color/colorPrimaryDark" />
+
+    <ImageButton
+        android:id="@+id/ibtnSaveProduct"
+        android:layout_width="@dimen/fragment_details_save_button_size"
+        android:layout_height="@dimen/fragment_details_save_button_size"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/deliver1"
+        android:background="@null"
+        android:src="@drawable/ic_save" />
+
+    <TextView
+
+        android:id="@+id/tvProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/deliver1"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_toLeftOf="@id/ibtnSaveProduct"
+        android:layout_toStartOf="@id/ibtnSaveProduct"
+        android:gravity="center"
+        android:minLines="3"
+        tools:text="asdasdasdasdasd" />
+
+    <View
+        android:id="@+id/devider"
+
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dilivers_height"
+        android:layout_below="@id/tvProductName"
+        android:layout_margin="@dimen/margin_xsmall"
+        android:background="@color/colorPrimaryDark" />
+
+
+    <TextView
+        android:id="@+id/tvPriceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvProductName"
+        android:layout_alignStart="@+id/tvProductName"
+        android:layout_below="@+id/devider"
+        android:layout_marginBottom="@dimen/margin_small"
+
+        android:text="@string/price"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+
+        android:layout_height="@dimen/dilivers_height"
+        android:layout_above="@+id/tvDescriptionLabel"
+        android:layout_margin="@dimen/margin_xsmall"
+        android:background="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/tvDescriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvProductName"
+        android:layout_alignStart="@+id/tvProductName"
+        android:layout_below="@+id/tvPriceLabel"
+        android:text="@string/details_fragment_description"
+        android:textColor="@color/colorPink"
+        android:textSize="18sp" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dilivers_height"
+        android:layout_alignEnd="@+id/view2"
+        android:layout_alignRight="@+id/view2"
+
+        android:layout_below="@+id/tvDescriptionLabel"
+        android:layout_marginBottom="@dimen/margin_xsmall"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_small"
+        android:background="@color/colorPink" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/view3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/view3"
+        android:layout_below="@+id/view3"
+        android:layout_toRightOf="@+id/tvDescriptionLabel"
+        android:scrollbarSize="4dp"
+        android:scrollbarThumbVertical="@color/colorPink"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvPriceLabel"
+        android:layout_alignBottom="@+id/tvPriceLabel"
+        android:layout_toEndOf="@+id/tvDescriptionLabel"
+        android:layout_toRightOf="@+id/tvDescriptionLabel"
+        tools:text="asdasd" />
+
+
+</RelativeLayout>

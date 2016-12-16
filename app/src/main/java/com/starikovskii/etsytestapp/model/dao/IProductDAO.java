@@ -11,8 +11,8 @@ import rx.Observable;
  */
 
 public interface IProductDAO {
-    void saveProduct(ProductModel productModel);
-    void deleteProduct(ProductModel productModel);
+    Observable<Long> saveProduct(ProductModel productModel);
+    Observable<Void> deleteProduct(ProductModel productModel);
     Observable<List<ProductModel>> getProducts(int offset);
 
 }

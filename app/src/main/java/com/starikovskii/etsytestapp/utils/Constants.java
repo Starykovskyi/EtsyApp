@@ -7,7 +7,7 @@ package com.starikovskii.etsytestapp.utils;
 public class Constants {
 
     public static class Network {
-        public static final String API_KEY = "l6pdqjuf7hdf97h1yvzadfce";
+        public static final String API_KEY = "ja0ehqq9bzxjelkf969qonjm";
         public static final String MAIN_IMAGE_INCLUDES = "MainImage";
         public static final String ENDPOINT = "https://openapi.etsy.com/";
         public static final String GET_CATEGORIES_URL = "v2/taxonomy/categories";

@@ -26,7 +26,7 @@ public class EtsyApplication extends Application {
         buildGraphAndInject();
     }
 
-    public static IEtsyMainComponent getAppComponent() {
+    public static IEtsyMainComponent getMainComponent() {
         return appComponent;
     }
 

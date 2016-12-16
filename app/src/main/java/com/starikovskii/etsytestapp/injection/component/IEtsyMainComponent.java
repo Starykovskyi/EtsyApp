@@ -8,8 +8,11 @@ import com.starikovskii.etsytestapp.EtsyApplication;
 import com.starikovskii.etsytestapp.injection.module.AppModule;
 import com.starikovskii.etsytestapp.injection.module.DAOModule;
 import com.starikovskii.etsytestapp.injection.module.NetworkModule;
-import com.starikovskii.etsytestapp.screens.products.ProductGridFragmentPresenterImpl;
-import com.starikovskii.etsytestapp.screens.search.SearchFragmentPresenterImpl;
+import com.starikovskii.etsytestapp.view.adapters.SavedProductRecyclerViewAdapter;
+import com.starikovskii.etsytestapp.view.screens.details.ProductDetailFragmentPresenterImpl;
+import com.starikovskii.etsytestapp.view.screens.products.ProductGridFragmentPresenterImpl;
+import com.starikovskii.etsytestapp.view.screens.savedproduct.SavedProductFragmentPresenterImpl;
+import com.starikovskii.etsytestapp.view.screens.search.SearchFragmentPresenterImpl;
 import com.starikovskii.etsytestapp.view.adapters.ProductRecyclerViewAdapter;
 
 import javax.inject.Singleton;
@@ -22,4 +25,7 @@ public interface IEtsyMainComponent {
     void inject(SearchFragmentPresenterImpl searchFragmentPresenter);
     void inject(ProductGridFragmentPresenterImpl productGridFragmentPresenter);
     void inject(ProductRecyclerViewAdapter.ProductViewHolder productViewHolder);
+    void inject(ProductDetailFragmentPresenterImpl productDetailFragmentPresenter);
+    void inject(SavedProductRecyclerViewAdapter.SavedProductViewHolder savedProductViewHolder);
+    void inject(SavedProductFragmentPresenterImpl savedProductFragmentPresenter);
 }

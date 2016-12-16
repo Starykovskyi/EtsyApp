@@ -1,6 +1,7 @@
 package com.starikovskii.etsytestapp.model.dao;
 
 import com.activeandroid.query.Select;
+import com.starikovskii.etsytestapp.model.ProductImageModel;
 import com.starikovskii.etsytestapp.model.ProductModel;
 
 import java.util.List;
@@ -14,13 +15,28 @@ import rx.functions.Func0;
 
 public class ProductDAO implements IProductDAO {
     @Override
-    public void saveProduct(ProductModel productModel) {
-        productModel.save();
+    public Observable<Long> saveProduct(final ProductModel productModel) {
+
+        Observable<Long> observable = Observable.defer(new Func0<Observable<Long>>() {
+            @Override public Observable<Long> call() {
+                productModel.getMainImage().save();
+                return Observable.just( productModel.save());
+            }
+        });
+        return observable;
+
     }
 
     @Override
-    public void deleteProduct(ProductModel productModel) {
-        productModel.delete();
+    public Observable<Void> deleteProduct(final ProductModel productModel) {
+        Observable<Void> observable = Observable.defer(new Func0<Observable<Void>>() {
+            @Override public Observable<Void> call() {
+                productModel.delete();
+                return Observable.just(null);
+           }
+        });
+        return observable;
+
     }
 
     @Override
