@@ -14,5 +14,5 @@ public interface ISavedProductFragmentView {
     void showProgressIndicator();
     void hideProgressIndicator();
     void onDeleteProduct(int position);
-
+    void onProductCountReceived(Long response);
 }

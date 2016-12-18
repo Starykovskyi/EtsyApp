@@ -3,6 +3,7 @@ package com.starikovskii.etsytestapp.model.dao;
 import com.starikovskii.etsytestapp.model.ProductModel;
 
 import java.util.List;
+import java.util.Locale;
 
 import rx.Observable;
 
@@ -14,5 +15,5 @@ public interface IProductDAO {
     Observable<Long> saveProduct(ProductModel productModel);
     Observable<Void> deleteProduct(ProductModel productModel);
     Observable<List<ProductModel>> getProducts(int offset);
-
+    Observable<Long> getProductCount();
 }

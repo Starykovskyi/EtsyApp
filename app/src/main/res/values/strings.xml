@@ -15,4 +15,5 @@
     <string name="saved_product_fragment_confirm">Ok</string>
     <string name="product_fragment_empty_error">Have no products, sorry</string>
     <string name="product_fragment_confirm">Ok</string>
+    <string name="search_fragment_loading">Loading</string>
 </resources>

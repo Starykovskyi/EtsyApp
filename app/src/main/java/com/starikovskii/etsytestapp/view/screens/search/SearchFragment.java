@@ -89,15 +89,7 @@ public class SearchFragment extends BaseFragment implements ISearchFragmentView 
     public void showProgressIndicator() {
         if(sad == null) {
             sad = new SweetAlertDialog(getContext(), SweetAlertDialog.PROGRESS_TYPE)
-                    .setTitleText(getString(R.string.details_fragment_product_added))
-                    .setConfirmText(getString(R.string.details_fragment_confirm))
-                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sDialog) {
-                            sDialog.dismissWithAnimation();
-                        }
-                    });
-
+                    .setTitleText(getString(R.string.search_fragment_loading));
             sad.getProgressHelper().setBarColor(R.color.colorPink);
         }
         sad.show();

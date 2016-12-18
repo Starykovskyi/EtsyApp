@@ -84,6 +84,27 @@ public class SavedProductFragmentPresenterImpl implements ISavedProductFragmentP
     }
 
     @Override
+    public void getProductCount() {
+        dao.getProductCount()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onCompleted() {
+                    }
+
+                    @Override
+                    public void onError(Throwable e){
+                    }
+
+                    @Override
+                    public void onNext(Long response) {
+                        view.onProductCountReceived(response);
+                    }
+                });
+    }
+
+    @Override
     public void init(ISavedProductFragmentView view) {
         this.view = view;
         EtsyApplication.getMainComponent().inject(this);

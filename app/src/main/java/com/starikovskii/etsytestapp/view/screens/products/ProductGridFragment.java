@@ -113,7 +113,7 @@ public class ProductGridFragment extends BaseFragment implements IProductGridFra
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 if (dy > 0) {
                     if (isCanLoading && (currentPagination.getNextOffset() < productCount)) {
-                        if ((layoutManager.getItemCount() + layoutManager.findFirstVisibleItemPosition()) >= layoutManager.getItemCount()) {
+                        if ((layoutManager.getChildCount() + layoutManager.findFirstVisibleItemPosition()) >= layoutManager.getItemCount()) {
                             isCanLoading = false;
                             presenter.loadMoreProducts(
                                     getArguments().getString(CATEGORY_NAME),

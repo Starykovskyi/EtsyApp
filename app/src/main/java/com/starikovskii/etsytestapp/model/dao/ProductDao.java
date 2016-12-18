@@ -5,6 +5,7 @@ import com.starikovskii.etsytestapp.model.ProductImageModel;
 import com.starikovskii.etsytestapp.model.ProductModel;
 
 import java.util.List;
+import java.util.Locale;
 
 import rx.Observable;
 import rx.functions.Func0;
@@ -14,6 +15,7 @@ import rx.functions.Func0;
  */
 
 public class ProductDAO implements IProductDAO {
+
     @Override
     public Observable<Long> saveProduct(final ProductModel productModel) {
 
@@ -48,8 +50,17 @@ public class ProductDAO implements IProductDAO {
                         .limit(25)
                         .offset(offset)
                         .execute();
-
                 return Observable.just(list);
+            }
+        });
+        return observable;
+    }
+
+    @Override
+    public Observable<Long> getProductCount() {
+        Observable<Long> observable = Observable.defer(new Func0<Observable<Long>>() {
+            @Override public Observable<Long> call() {
+                return Observable.just(Long.valueOf(new Select().from(ProductModel.class).count()));
             }
         });
         return observable;

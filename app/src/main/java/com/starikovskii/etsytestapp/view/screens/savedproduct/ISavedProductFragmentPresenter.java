@@ -8,4 +8,5 @@ public interface ISavedProductFragmentPresenter extends IBaseFragmentPresenter<I
     void loadMoreProducts(int offset);
     void deleteProduct(ProductModel product, int position);
     void onProductClick(ProductModel product);
+    void getProductCount();
 }

@@ -41,6 +41,7 @@ public class SavedProductFragment extends BaseFragment implements ISavedProductF
     DotProgressBar dpbProgress;
     private View rootView;
     private boolean isCanLoading = true;
+    private Long productCount = 0L;
     @Inject
     ISavedProductFragmentPresenter presenter;
 
@@ -62,11 +63,18 @@ public class SavedProductFragment extends BaseFragment implements ISavedProductF
             initPresenter();
             initRecyclerView();
             initRefresher();
+            presenter.getProductCount();
             presenter.loadProducts();
         }
-        ButterKnife.bind(this, rootView);
         return rootView;
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        hideProgressIndicator();
+    }
+
+
 
     private void initRefresher() {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -100,8 +108,8 @@ public class SavedProductFragment extends BaseFragment implements ISavedProductF
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 if (dy > 0) {
-                    if (isCanLoading) {
-                        if ((layoutManager.getItemCount() + layoutManager.findFirstVisibleItemPosition()) >= layoutManager.getItemCount()) {
+                    if (isCanLoading && (recyclerViewAdapter.getItemCount() < productCount)) {
+                        if ((layoutManager.getChildCount() + layoutManager.findFirstVisibleItemPosition()) >= layoutManager.getItemCount()) {
                             isCanLoading = false;
                             presenter.loadMoreProducts(recyclerViewAdapter.getItemCount());
                         }
@@ -147,6 +155,11 @@ public class SavedProductFragment extends BaseFragment implements ISavedProductF
     @Override
     public void onDeleteProduct(int position) {
         recyclerViewAdapter.deleteProduct(position);
+    }
+
+    @Override
+    public void onProductCountReceived(Long response) {
+        this.productCount = response;
     }
 
 
